@@ -3,8 +3,10 @@ package hw5;
 import java.util.Random;
 
 public class Philosopher extends Thread {
+    private final int SATIETY = 3;
     private Fork leftFork, rigFork;
     private String name;
+
 
     public Philosopher(String name, Fork leftFork, Fork rightFork) {
         this.name = name;
@@ -15,7 +17,7 @@ public class Philosopher extends Thread {
     @Override
     public void run() {
         int eatCount = 0;
-        while (eatCount < 3) {
+        while (eatCount < SATIETY) {
             // подумать
             think();
             // взять вилки
